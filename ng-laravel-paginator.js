@@ -3,6 +3,10 @@ angular.module('ng-laravel-paginator', [])
 
         var Paginator = function (url, params, method, options) {
 
+            if(angular.isUndefined(options)){
+                options = {};
+            }
+            
             this.options = {
                 /**
                  * Option for adding to the beginning of the array
