@@ -6,8 +6,12 @@ angular.module('ng-laravel-paginator', [])
             if(angular.isUndefined(options)){
                 options = {};
             }
-            
+
             this.options = {
+                /**
+                 * Option for caching http requests
+                 */
+                cache: options.cache || false,
                 /**
                  * Option for adding to the beginning of the array
                  * Default: false
@@ -65,7 +69,8 @@ angular.module('ng-laravel-paginator', [])
             return $http({
                 url: this.nextUrl || this.startUrl,
                 params: this.params,
-                method: this.method
+                method: this.method,
+                cache: this.options.cache
             }).then(function (response) {
 
                 that.currentResponse = response;

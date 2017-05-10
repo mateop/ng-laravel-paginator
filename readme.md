@@ -1,3 +1,5 @@
+TODO: update docs with changes from fork
+
 #NG Laravel Paginator
 
 This package provides a easy way to use Pagination of the Laravel with AngularJS interface

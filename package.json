@@ -1,27 +1,29 @@
 {
   "name": "ng-laravel-paginator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A package for angular to easy integration with Laravel pagination",
   "main": "ng-laravel-paginator.js",
-  "scripts": {
-    "test": "echo \"No Tests!\""
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wallacemaxters/ng-laravel-paginator.git"
+    "url": "git+https://github.com/mateop/ng-laravel-paginator.git"
   },
   "keywords": [
     "laravel",
     "paginator",
-    "ng-paginator"
+    "ng-paginator",
+    "angularjs"
   ],
-  "author": "wallace de souza <wallacemaxters@gmail.com>",
+  "author": "Mateo Perčinič <percinic@gmail.com>",
+  "contributors": [
+    "wallace de souza <wallacemaxters@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wallacemaxters/ng-laravel-paginator/issues"
   },
-  "homepage": "https://github.com/wallacemaxters/ng-laravel-paginator#readme",
+  "homepage": "https://github.com/mateop/ng-laravel-paginator#readme",
   "devDependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.6.*"
   }
 }
