@@ -3,7 +3,7 @@ angular.module('ng-laravel-paginator', [])
 
         var Paginator = function (url, params, method, options) {
 
-            if(angular.isUndefined(options)){
+            if (angular.isUndefined(options)) {
                 options = {};
             }
 
@@ -20,7 +20,9 @@ angular.module('ng-laravel-paginator', [])
                 /**
                  * Optional function to call before adding data to the scope
                  */
-                callback: options.callback || function(data){return data;}
+                callback: options.callback || function (data) {
+                    return data;
+                }
             };
             this.busy = false;
             this.completed = false;
@@ -68,9 +70,10 @@ angular.module('ng-laravel-paginator', [])
 
             return $http({
                 url: this.nextUrl || this.startUrl,
-                params: this.params,
+                params: (this.method.toUpperCase() === 'GET' ? this.params : undefined),
                 method: this.method,
-                cache: this.options.cache
+                cache: this.options.cache,
+                data: (this.method.toUpperCase() !== 'GET' ? this.params : undefined)
             }).then(function (response) {
 
                 that.currentResponse = response;
@@ -82,7 +85,7 @@ angular.module('ng-laravel-paginator', [])
 
                 data.data = that.options.callback(data.data);
 
-                if(that.options.reverse === true){
+                if (that.options.reverse === true) {
                     that.data = data.data.concat(that.data);
                 } else {
                     that.data = that.data.concat(data.data);
